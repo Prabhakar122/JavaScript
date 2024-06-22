@@ -1,11 +1,23 @@
-let score;
-console.log(typeof(score));
+let score = "3";
+// console.log(typeof(score));
 
-// let Value = Number(score)
+let Value = Number(score)
 // let Value = Boolean(score)
-let Value = String(score)
+// let Value = String(score)
 console.log(typeof Value);
 console.log(Value);
+
+// console.log(2+2); //add
+// console.log(2-2); //sub
+// console.log(2*2); //product
+// console.log(2**2); //power
+// console.log(2/2); //quotient
+// console.log(2%2); //reminder
+
+// console.log(1 + "2"); //converts to string
+// console.log("1" + 2); //converts to stirng
+// console.log("2" + 1 + 1); //converts to sting
+// console.log(1 + 1 + "2"); //add then convert to string
 
 /*
 Number(variable) = to number
