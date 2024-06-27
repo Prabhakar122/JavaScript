@@ -19,3 +19,4 @@ let timeStamp = Date.now();
 console.log(NewDate_01.toLocaleString('default', {
     weekday: "long",
 }))
+     
