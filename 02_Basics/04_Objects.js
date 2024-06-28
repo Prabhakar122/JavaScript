@@ -51,4 +51,16 @@ const JustAarray = [
 // console.log(Object.values(facebookUser));
 // console.log(Object.entries(facebookUser));  //not really used
 
-console.log(facebookUser.hasOwnProperty("name"));     //to check object has property or not
+// console.log(facebookUser.hasOwnProperty("name"));     //to check object has property or not
+
+const course = {
+    name : "JavaScript",
+    fee : 999,
+    courseInstructor : "Hitesh"
+}
+// course.courseInstructor
+//  const {courseInstructor} = course
+ const {courseInstructor : Instructor} = course
+
+// console.log(courseInstructor);
+console.log(Instructor);
