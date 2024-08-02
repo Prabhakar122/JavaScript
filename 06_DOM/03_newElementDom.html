@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a new element in DOM</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const parent = document.createElement('div');
+    parent.className = "main";
+    parent.id = "mainId";
+    parent.setAttribute("title", "main_title");
+    parent.style.backgroundColor = "blue";
+    parent.style.color = "white";
+    parent.style.padding = "10px";
+
+    parent.innerHTML = "Hello "
+    const addText = document.createTextNode("Prabhat Tharu");
+    parent.appendChild(addText);
+    document.body.appendChild(parent);
+
+    console.log(parent);
+</script>
+</html>

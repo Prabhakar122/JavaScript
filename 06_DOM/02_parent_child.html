@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new element in DOM</title>
+</head>
+<body>
+    <div class="week">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.week');
+    // console.log(parent);
+    // console.log(parent.children);
+    // console.log(parent.children[0].innerHTML = "Sunday");
+
+    for (let index = 0; index < parent.children.length; index++) {
+        const element = parent.children[index];
+        // console.log(element.innerHTML);
+    }
+
+    const firstChild = document.querySelector('.day')
+    // console.log(firstChild);
+    // console.log(firstChild.parentElement);
+    // console.log(firstChild.nextElementSibling);
+    
+    // console.log(parent.childNodes);
+    
+</script>
+</html>
