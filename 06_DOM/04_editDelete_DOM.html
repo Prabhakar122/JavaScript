@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append in DOM</title>
+</head>
+<body>
+    <ul class="main">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    /*  Basic method    */
+    
+    // const li = document.querySelector('.main');
+    // const newLi = document.createElement('li');
+    // newLi.innerHTML = "Python";
+    // li.appendChild(newLi);
+    
+
+    /*  Basic method using function: But not optimized because traverse the whole tree as apends child at last of tree*/
+
+    function addLang(lang) {
+        const newLi = document.createElement('li')
+        newLi.innerHTML = `${lang}`;
+        document.querySelector('.main').appendChild(newLi);
+    }
+    addLang("Python");
+    
+    
+    /*  Optimized method for DSA    */
+    
+    function addNewLang(lang) {
+        const newLi = document.createElement('li');
+        const addText = document.createTextNode(lang);
+        newLi.appendChild(addText)
+        document.querySelector('.main').appendChild(newLi);
+    }
+    addNewLang('Php');
+
+
+    /********  Edit    *********/
+    /*  using replaceWith and textContent    */
+    
+    const Li = document.querySelector('li:nth-child(2)');
+    // Li.innerHTML = "typescript";
+    const newLi = document.createElement('li')
+    newLi.textContent = "Typescript";
+    Li.replaceWith(newLi);
+    
+    /*  using replaceWith and append child    */
+    
+    const Li2 = document.querySelector('li:nth-child(2)');
+    const newLi1 = document.createElement('li');
+    const addtext = document.createTextNode('CPP');
+    newLi1.appendChild(addtext);
+    Li2.replaceWith(newLi1);
+
+
+    /*  using outerHTML   */
+    const li3 = document.querySelector('li:first-child');
+    li3.outerHTML = '<li>java</li>'
+
+    /*  Using function  */
+
+    function replaceLang(lang,position) {
+        const toBeReplaced = document.querySelector(`li:nth-child(${position})`);
+        const newItem = document.createElement('li');
+        const langName = document.createTextNode(`${lang}`);
+        newItem.appendChild(langName);
+        toBeReplaced.replaceWith(newItem);
+    }
+    replaceLang('Ruby', 3);
+
+
+    /*  Remove  */
+
+    const toBeRemoved = document.querySelector('li:last-child');
+    toBeRemoved.remove();
+    
+
+
+</script>
+</html>
