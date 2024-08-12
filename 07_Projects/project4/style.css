@@ -1,0 +1,43 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    /* min-height: 100vh; */
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label{
+    font-size: xx-large;
+}
+#guessedNum{
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+#submit{
+    width: 5rem;
+    padding: 5px;
+    margin: 5px;
+}
+
+.results{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+h2:hover{
+    box-shadow: 0px 0px 10px 0px blue;
+
+}

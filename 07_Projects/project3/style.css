@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+#clock{
+    display: flex;
+    /* border: 2px solid red; */
+    min-width: 10rem;
+    min-height: 2rem;
+    margin: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    justify-content: center;
+    font-size: xx-large;
+}
