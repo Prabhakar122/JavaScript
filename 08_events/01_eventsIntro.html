@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        img{
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Images</h1>
+    <ul id="images">
+        <li>        
+            <img src="https://images.pexels.com/photos/27911407/pexels-photo-27911407/free-photo-of-horses-and-riders-are-standing-in-the-water-at-sunset.jpeg" alt="horses" id="horses" >
+            <!-- onclick="alert('hello horses')" -->
+
+        </li>
+        <li>
+            <img src="https://images.pexels.com/photos/27637374/pexels-photo-27637374/free-photo-of-efes.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="ruins" id="ruins">
+        </li>
+        <li>
+            <img src="https://images.pexels.com/photos/26100528/pexels-photo-26100528/free-photo-of-chipmunk-on-ground.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="squirel" id="squirel">
+        </li>
+        <li >
+            <a href="https://www.google.com" id="google">Goolgool</a>
+        </li>
+    </ul>
+</body>
+<script>
+    // document.getElementById('horses').onclick = function () {
+    //     alert('horses');
+    // } 
+
+    document.getElementById('horses').addEventListener('click', function (event) {
+        // alert('horses');
+
+        // console.log(event);
+        
+    }, false);
+
+    /*
+    type, timeStamp, defaultPrevented, target, toElement, scrElement, currentTarget
+
+    clientX, clientY, screenX, screenY
+
+    alt key, ctrl key, shift key, keycode
+    */
+
+
+   /*
+   capturing    : top to bottom or parent to child
+   bubling      : bottom to top or child to parent
+   */
+
+   /*
+   defalult : false
+
+   false    : bubbling
+   true     : capturing
+   */
+
+    document.getElementById('images').addEventListener('click', function (event) {
+        // console.log("images clicked");
+    })
+
+    document.getElementById('horses').addEventListener('click', function (event) {
+        // console.log("horses clicked");
+
+        // event.stopPropagation();
+        // stops the bubling 
+    })
+
+    document.getElementById('google').addEventListener('click', function (event) {
+        event.preventDefault();
+        // console.log("google is clicked successfully");
+    })
+
+    document.querySelector('#images').addEventListener('click', function (event) {
+        // console.log(event.target.parentNode);
+        console.log(event.target.tagName);
+        // let toBeRemoved = event.target.parentNode;
+        // toBeRemoved.remove();
+        
+        if (event.target.tagName === 'IMG') {
+            let toBeRemoved = event.target.parentNode;
+            toBeRemoved.remove();     
+        }        
+    })
+</script>
+</html>

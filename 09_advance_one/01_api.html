@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api requests using xml</title>
+    <style>
+        .cardWrapper{
+            /* background-color: rgb(111, 114, 116); */
+
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #Request{
+            padding: 5px;
+        }
+        .card{
+            background-color: paleturquoise;
+            height: 350px;
+            /* padding: 10px; */
+            overflow: hidden;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .profileImg{
+            height: 390px;
+        }
+        .card img{
+            height: 300px;
+        }
+        
+        .desc{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            /* margin-top: 10px; */
+        }
+        .card p{
+            margin: 0;
+            text-align: center;
+            text-emphasis: bold;
+            padding-left: 5px;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cardWrapper">
+        <button id="Request">Request Profile</button>
+        
+    </div>
+    
+</body>
+<script>
+
+    apiUrl = 'https://api.github.com/users/Prabhakar122';
+    const xhrRequest = new XMLHttpRequest();
+
+    // console.log(xhrRequest.readyState);
+    xhrRequest.open('GET', apiUrl);
+    // console.log(xhrRequest.readyState);
+
+    xhrRequest.onreadystatechange = function () {
+        console.log(xhrRequest.readyState);
+        if (xhrRequest.readyState === 4) {
+            // console.log(this.responseText);     /*  to get the whole api */
+            const objectValues = JSON.parse(this.responseText)
+            // console.log(objectValues.followers);
+            const profileLink = objectValues.avatar_url;
+            const profileName = objectValues.name;
+            const followers = objectValues.followers;
+            
+            const cardWrapper = document.querySelector('.cardWrapper');
+            document.querySelector('#Request').addEventListener('click', () => {
+                cardWrapper.innerHTML =`
+                <div class="card">
+                <div class="profileImg">
+                    <img src="${profileLink}" alt="profile">
+                </div>
+                <div class="desc">
+                    <p>Name: ${profileName}</p>
+                    <p>Followers: ${followers}</p>
+                </div>
+            </div>
+                `;
+            })
+            
+
+        }
+    }
+    xhrRequest.send();
+    
+    
+
+    
+</script>
+</html>
