@@ -12,4 +12,4 @@ A simple project using **JavaScript** and minimal **HTML**. This repository focu
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/Prabhakar122/JavaScript
